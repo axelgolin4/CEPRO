@@ -22,6 +22,7 @@ export const navLinks = [
   { href: "/nosotros", label: "Nosotros" },
   { href: "/servicios", label: "Servicios" },
   { href: "/equipo", label: "Equipo" },
+  { href: "/galeria", label: "Galería" },
   { href: "/contacto", label: "Contacto" },
 ];
 
@@ -144,7 +145,8 @@ export const equipo = [
     slug: "luis-arturo-hernandez",
     nombre: "Lic. Luis Arturo Hernández Velásquez",
     cargo: "Licenciado en Fisioterapia",
-    foto: "/fotos/arturo.jpg",
+    foto: "/fotos/Luis.jpg",
+    fotoPos: "object-[58%_15%]",
     especialidades: [
       "Rehabilitación de rodilla y hombro",
       "Dosificación y prescripción del ejercicio terapéutico",
@@ -202,4 +204,20 @@ export const equipo = [
     objetivo:
       "Contribuir a la recuperación y al bienestar integral de nuestros pacientes, combinando técnicas terapéuticas con masajes relajantes según las necesidades de cada persona.",
   },
+];
+
+export const galeria = [
+  { src: "/fotos/f02a0538-3ec0-442d-abc3-14c06d0431b0.jpg", alt: "Área de tratamiento de CEPRO", categoria: "Instalaciones" },
+  { src: "/fotos/70bc26d2-2f7c-4bf6-a265-d524dfbc2097.jpg", alt: "Equipo de CEPRO en el área de ejercicio", categoria: "Instalaciones" },
+  { src: "/fotos/arturo.jpg", alt: "Equipo de ondas de choque y electroestimulación", categoria: "Tecnología" },
+  { src: "/fotos/e6ed9add-9306-471c-bf14-7602c1587e6e.jpg", alt: "Terapia de ondas de choque en el pie", categoria: "Tecnología" },
+  { src: "/fotos/b0db8798-3627-4940-b2f3-bdc29ed68bc7.jpg", alt: "Láser terapéutico en rodilla", categoria: "Tecnología" },
+  { src: "/fotos/a769cafa-1023-4ca0-bc22-8b930f80dd6b.jpg", alt: "Equipo de electroestimulación", categoria: "Tecnología" },
+  { src: "/fotos/e993bacf-d61d-430f-8833-e5af4d736f06.jpg", alt: "Electroestimulación en rodilla", categoria: "Tecnología" },
+  { src: "/fotos/453c42c4-57b8-407b-b667-d7fc78317202.jpg", alt: "Electrodo de electroestimulación en rodilla", categoria: "Tecnología" },
+  { src: "/fotos/5213d594-5909-494b-9a5e-49f875906a07.jpg", alt: "Ejercicio terapéutico con banda elástica", categoria: "Tratamientos" },
+  { src: "/fotos/95ae66aa-66b2-412f-bb08-8a145045d553.jpg", alt: "Movilización y estiramiento de pierna", categoria: "Tratamientos" },
+  { src: "/fotos/52671b8d-8386-4201-86f3-11bdd0ae3571.jpg", alt: "Masaje profesional de espalda", categoria: "Tratamientos" },
+  { src: "/fotos/740f3fe0-56ad-46fe-a40f-711fbce8e0ae.jpg", alt: "Tratamiento fisioterapéutico en brazo", categoria: "Tratamientos" },
+  { src: "/fotos/cc652f64-0e9d-41cb-b04e-677f2f2fb7d9.jpg", alt: "Fisioterapeuta tratando a una paciente", categoria: "Tratamientos" },
 ];

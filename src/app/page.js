@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2, Cpu, HeartHandshake, MonitorSmartphone } from "lucide-react";
 import CtaBanner from "@/components/CtaBanner";
 import ServiceCard from "@/components/ServiceCard";
-import { beneficios, equipo, servicios, whatsappLink } from "@/data/site";
+import { beneficios, equipo, galeria, servicios, whatsappLink } from "@/data/site";
 
 const confianza = [
   { icon: HeartHandshake, label: "Atención personalizada", texto: "Un plan adaptado a tu condición, tu ritmo y tus objetivos." },
@@ -78,7 +78,7 @@ export default function Home() {
         </div>
         <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-xl">
           <Image
-            src="/fotos/e6ed9add-9306-471c-bf14-7602c1587e6e.jpg"
+            src="/fotos/f02a0538-3ec0-442d-abc3-14c06d0431b0.jpg"
             alt="Instalaciones de CEPRO"
             fill
             className="object-cover"
@@ -131,7 +131,7 @@ export default function Home() {
                 className="group rounded-3xl bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
               >
                 <div className="relative mx-auto h-36 w-36 overflow-hidden rounded-full bg-cepro/10 ring-4 ring-accent/20">
-                  {p.foto && <Image src={p.foto} alt={p.nombre} fill className="object-cover object-top" />}
+                  {p.foto && <Image src={p.foto} alt={p.nombre} fill className={`object-cover ${p.fotoPos ?? "object-top"}`} />}
                 </div>
                 <p className="mt-5 font-display font-bold group-hover:text-cepro">{p.nombre}</p>
                 <p className="text-xs font-semibold uppercase tracking-wider text-accent">{p.cargo}</p>
@@ -143,6 +143,37 @@ export default function Home() {
           <Link href="/equipo" className="mt-10 inline-flex items-center gap-2 font-semibold text-cepro">
             Conoce al equipo <ArrowRight size={18} />
           </Link>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
+        <div className="flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <p className="font-semibold uppercase tracking-widest text-accent">Galería</p>
+            <h2 className="mt-3 font-display text-3xl font-bold text-cepro sm:text-4xl">Así trabajamos en CEPRO</h2>
+          </div>
+          <Link href="/galeria" className="inline-flex items-center gap-2 font-semibold text-cepro">
+            Ver galería completa <ArrowRight size={18} />
+          </Link>
+        </div>
+        <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4 md:grid-rows-2">
+          {galeria.slice(0, 5).map((foto, i) => (
+            <Link
+              key={foto.src}
+              href="/galeria"
+              className={`group relative overflow-hidden rounded-2xl bg-surface ${
+                i === 0 ? "col-span-2 aspect-[4/3] md:row-span-2 md:aspect-auto" : "aspect-square"
+              }`}
+            >
+              <Image
+                src={foto.src}
+                alt={foto.alt}
+                fill
+                sizes={i === 0 ? "(min-width: 768px) 50vw, 100vw" : "(min-width: 768px) 25vw, 50vw"}
+                className="object-cover transition duration-500 group-hover:scale-105"
+              />
+            </Link>
+          ))}
         </div>
       </section>
 
