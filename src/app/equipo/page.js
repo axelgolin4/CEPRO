@@ -21,7 +21,7 @@ export default function EquipoPage() {
           <article key={p.slug} className="flex flex-col overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-slate-100">
             <div className="relative grid aspect-[4/5] place-items-center bg-surface">
               {p.foto ? (
-                <Image src={p.foto} alt={p.nombre} fill className={`object-cover ${p.fotoPos ?? "object-top"}`} />
+                <Image src={p.foto} alt={p.nombre} fill className="object-cover object-top" />
               ) : (
                 <UserRound size={80} className="text-cepro/30" />
               )}

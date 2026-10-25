@@ -131,7 +131,7 @@ export default function Home() {
                 className="group rounded-3xl bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
               >
                 <div className="relative mx-auto h-36 w-36 overflow-hidden rounded-full bg-cepro/10 ring-4 ring-accent/20">
-                  {p.foto && <Image src={p.foto} alt={p.nombre} fill className={`object-cover ${p.fotoPos ?? "object-top"}`} />}
+                  {p.foto && <Image src={p.foto} alt={p.nombre} fill className="object-cover object-top" />}
                 </div>
                 <p className="mt-5 font-display font-bold group-hover:text-cepro">{p.nombre}</p>
                 <p className="text-xs font-semibold uppercase tracking-wider text-accent">{p.cargo}</p>

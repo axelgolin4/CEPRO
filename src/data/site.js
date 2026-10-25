@@ -145,8 +145,7 @@ export const equipo = [
     slug: "luis-arturo-hernandez",
     nombre: "Lic. Luis Arturo Hernández Velásquez",
     cargo: "Licenciado en Fisioterapia",
-    foto: "/fotos/Luis.jpg",
-    fotoPos: "object-[58%_15%]",
+    foto: "/fotos/equipo/luis.jpg",
     especialidades: [
       "Rehabilitación de rodilla y hombro",
       "Dosificación y prescripción del ejercicio terapéutico",
@@ -169,7 +168,7 @@ export const equipo = [
     slug: "yessi-maldonado",
     nombre: "Licda. Yessi Maldonado",
     cargo: "Licenciada en Fisioterapia",
-    foto: "/fotos/YESI.jpg",
+    foto: "/fotos/equipo/yessi.jpg",
     especialidades: [
       "Fisioterapia pediátrica",
       "Fisioterapia neurológica",
@@ -189,7 +188,7 @@ export const equipo = [
     slug: "carmen-maria-fetzer",
     nombre: "Carmen María Fetzer Milian",
     cargo: "Técnica en Terapia Física y Ocupacional",
-    foto: "/fotos/Carmen.jpg",
+    foto: "/fotos/equipo/carmen.jpg",
     especialidades: [
       "Terapia física y rehabilitación",
       "Masajes relajantes y bienestar corporal",

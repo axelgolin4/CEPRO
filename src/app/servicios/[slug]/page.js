@@ -84,7 +84,7 @@ export default async function ServicioPage({ params }) {
         <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
           <div className="flex flex-col items-center gap-8 rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-100 sm:flex-row">
             <div className="relative h-36 w-36 shrink-0 overflow-hidden rounded-full bg-surface">
-              <Image src={especialista.foto} alt={especialista.nombre} fill className={`object-cover ${especialista.fotoPos ?? "object-top"}`} />
+              <Image src={especialista.foto} alt={especialista.nombre} fill className="object-cover object-top" />
             </div>
             <div className="text-center sm:text-left">
               <p className="text-sm font-semibold uppercase tracking-widest text-accent">Especialista a cargo</p>

@@ -32,7 +32,7 @@ export default async function PerfilPage({ params }) {
       <section className="mx-auto grid max-w-7xl gap-12 px-4 py-20 sm:px-6 md:grid-cols-5">
         <div className="relative grid aspect-[4/5] place-items-center overflow-hidden rounded-3xl bg-surface md:col-span-2">
           {persona.foto ? (
-            <Image src={persona.foto} alt={persona.nombre} fill className={`object-cover ${persona.fotoPos ?? "object-top"}`} />
+            <Image src={persona.foto} alt={persona.nombre} fill className="object-cover object-top" />
           ) : (
             <UserRound size={100} className="text-cepro/30" />
           )}
