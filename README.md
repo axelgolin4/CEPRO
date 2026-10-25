@@ -40,6 +40,8 @@ src/
 ├── app/
 │   ├── layout.js               # Layout raíz: fuentes, metadata, Navbar, Footer, botones flotantes
 │   ├── globals.css             # Tailwind + tokens de color y fuentes (@theme)
+│   ├── icon.png                # Favicon (logo CEPRO, 512×512)
+│   ├── apple-icon.png          # Ícono para iOS (180×180)
 │   ├── page.js                 # Inicio
 │   ├── nosotros/page.js
 │   ├── servicios/
@@ -118,7 +120,7 @@ Fuentes: `font-display` (Montserrat) para títulos y `font-sans` (Inter) por def
 ## Imágenes
 
 - Se sirven desde `public/` y se renderizan con `next/image` (`fill` + `object-cover` y `sizes` en la galería).
-- Los retratos de `public/fotos/equipo/` se editaron para que los tres tengan el mismo tamaño (800×1000, proporción 4:5), el mismo encuadre y el mismo fondo degradado azul claro (`#EEF4FC` → `#CFDFF3`). El fondo original se quitó con [`@imgly/background-removal-node`](https://www.npmjs.com/package/@imgly/background-removal-node) y la composición se hizo con `sharp`. Para un nuevo integrante conviene repetir el mismo proceso, para que todos los retratos se vean iguales.
+- Los retratos de `public/fotos/equipo/` se editaron para que los tres tengan el mismo tamaño (800×1000, proporción 4:5), el mismo encuadre y el mismo fondo degradado beige claro (`#F5F0E8` → `#E4DACB`). El fondo original se quitó con [`@imgly/background-removal-node`](https://www.npmjs.com/package/@imgly/background-removal-node) y la composición se hizo con `sharp`. Para un nuevo integrante conviene repetir el mismo proceso, para que todos los retratos se vean iguales.
 - Las fotos originales del equipo se conservan en `public/fotos/`.
 
 ## Despliegue
