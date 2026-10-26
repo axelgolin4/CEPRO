@@ -128,14 +128,14 @@ export default function Home() {
               <Link
                 key={p.slug}
                 href={`/equipo/${p.slug}`}
-                className="group rounded-3xl bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+                className="group flex flex-col rounded-3xl bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
               >
-                <div className="relative mx-auto h-36 w-36 overflow-hidden rounded-full bg-cepro/10 ring-4 ring-accent/20">
+                <div className="relative mx-auto h-36 w-36 overflow-hidden rounded-full bg-cepro/10 ring-4 ring-cepro/15 ring-offset-4 transition group-hover:ring-cepro/40">
                   {p.foto && <Image src={p.foto} alt={p.nombre} fill className="object-cover object-top" />}
                 </div>
                 <p className="mt-5 font-display font-bold group-hover:text-cepro">{p.nombre}</p>
-                <p className="text-xs font-semibold uppercase tracking-wider text-accent">{p.cargo}</p>
-                <p className="mt-3 text-sm text-ink/70">{p.especialidades.slice(0, 2).join(" · ")}</p>
+                <p className="mt-1 text-xs font-semibold uppercase tracking-wider text-cepro">{p.cargo}</p>
+                <p className="mt-3 flex-1 text-sm text-ink/70">{p.especialidades.slice(0, 2).join(" · ")}</p>
                 <span className="mt-5 inline-block text-sm font-semibold text-cepro">Ver perfil →</span>
               </Link>
             ))}

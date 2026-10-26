@@ -72,7 +72,12 @@ export default function Footer() {
       </div>
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-5 text-xs text-white/50 sm:px-6 md:flex-row md:justify-between">
-          <p>© 2026 CEPRO – Centro Profesional de Rehabilitación en Occidente</p>
+          <div>
+            <p>© 2026 CEPRO – Centro Profesional de Rehabilitación en Occidente</p>
+            <p className="mt-1">
+              Diseño web: <span className="font-semibold text-white/70">Axel Rodas</span>
+            </p>
+          </div>
           <p className="md:max-w-md md:text-right">
             La información de este sitio es orientativa y no reemplaza una valoración fisioterapéutica profesional.
           </p>
