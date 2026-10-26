@@ -1,3 +1,6 @@
+// URL pública del sitio; cambiarla aquí si se conecta un dominio propio.
+export const siteUrl = "https://cepro-three.vercel.app";
+
 export const contacto = {
   nombre: "CEPRO – Centro Profesional de Rehabilitación en Occidente",
   direccion: "Calle A 23-70, Zona 1, Edificio Andaga, Clínica 104, Quetzaltenango, Guatemala",
