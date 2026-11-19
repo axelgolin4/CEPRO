@@ -1,7 +1,7 @@
-import { Zap } from "lucide-react";
+import { MessageCircle, Phone, Zap } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
 import ServiceCard from "@/components/ServiceCard";
-import { servicios, tecnologias, whatsappLink } from "@/data/site";
+import { servicios, tecnologias, telLink, whatsappLink } from "@/data/site";
 
 export const metadata = { title: "Servicios" };
 
@@ -50,14 +50,22 @@ export default function ServiciosPage() {
               Escríbenos y nuestro equipo te orientará hacia el servicio más adecuado para tu recuperación.
             </p>
           </div>
-          <a
-            href={whatsappLink("Hola, no sé qué tratamiento necesito. ¿Me pueden orientar?")}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="shrink-0 rounded-full bg-white px-7 py-3.5 text-center font-semibold text-cepro transition hover:bg-surface"
-          >
-            Consultar por WhatsApp
-          </a>
+          <div className="grid shrink-0 grid-cols-2 gap-3">
+            <a
+              href={whatsappLink("Hola, no sé qué tratamiento necesito. ¿Me pueden orientar?")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full bg-white px-6 py-3.5 font-semibold text-cepro transition hover:bg-surface"
+            >
+              <MessageCircle size={20} /> WhatsApp
+            </a>
+            <a
+              href={telLink()}
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full bg-white px-6 py-3.5 font-semibold text-cepro transition hover:bg-surface"
+            >
+              <Phone size={19} /> Llamar
+            </a>
+          </div>
         </div>
       </section>
     </>

@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, Cpu, HeartHandshake, MonitorSmartphone } from "lucide-react";
+import { ArrowRight, CheckCircle2, Cpu, HeartHandshake, MonitorSmartphone, Zap } from "lucide-react";
 import CtaBanner from "@/components/CtaBanner";
+import PainPicker from "@/components/PainPicker";
 import ServiceCard from "@/components/ServiceCard";
-import { beneficios, equipo, galeria, servicios, whatsappLink } from "@/data/site";
+import { beneficios, equipo, galeria, pasos, servicios, tecnologias } from "@/data/site";
 
 const confianza = [
   { icon: HeartHandshake, label: "Atención personalizada", texto: "Un plan adaptado a tu condición, tu ritmo y tus objetivos." },
@@ -31,20 +32,13 @@ export default function Home() {
           <p className="mt-6 max-w-xl text-lg text-white/85 sm:text-xl">
             Recuperar el movimiento es recuperar oportunidades para vivir mejor.
           </p>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <a
-              href={whatsappLink()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full bg-accent px-7 py-3.5 font-semibold text-white transition hover:brightness-110"
-            >
-              Agendar evaluación
-            </a>
+          <div className="mt-8 max-w-xl">
+            <PainPicker />
             <Link
               href="/servicios"
-              className="rounded-full border border-white/40 px-7 py-3.5 font-semibold transition hover:bg-white/10"
+              className="mt-5 inline-flex items-center gap-2 font-semibold text-white/85 hover:text-white"
             >
-              Ver servicios
+              Ver servicios <ArrowRight size={18} />
             </Link>
           </div>
           <div className="mt-14 grid gap-4 sm:grid-cols-3">
@@ -98,6 +92,60 @@ export default function Home() {
             {servicios.slice(0, 6).map((s, i) => (
               <ServiceCard key={s.slug} servicio={s} numero={i + 1} />
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
+        <h2 className="text-center font-display text-3xl font-bold text-cepro sm:text-4xl">¿Cómo trabajamos?</h2>
+        <p className="mx-auto mt-3 max-w-xl text-center text-ink/70">
+          Primero entendemos qué te pasa. Después dosificamos cada paso de tu recuperación.
+        </p>
+        <ol className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {pasos.map((paso, i) => (
+            <li key={paso.titulo} className="rounded-2xl bg-surface p-6">
+              <span className="font-display text-3xl font-extrabold text-accent">0{i + 1}</span>
+              <h3 className="mt-3 font-display font-bold text-ink">{paso.titulo}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-ink/70">{paso.texto}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section className="bg-cepro-dark py-20 text-white">
+        <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2">
+          <div className="grid grid-cols-2 gap-4">
+            {[
+              { src: "/fotos/arturo.jpg", alt: "Luis Arturo Hernández con el equipo de ondas de choque" },
+              { src: "/fotos/e993bacf-d61d-430f-8833-e5af4d736f06.jpg", alt: "Electroestimulación aplicada en la rodilla" },
+            ].map((foto, i) => (
+              <div
+                key={foto.src}
+                className={`relative aspect-[3/4] overflow-hidden rounded-2xl ${i === 1 ? "mt-10" : ""}`}
+              >
+                <Image src={foto.src} alt={foto.alt} fill sizes="(min-width: 1024px) 25vw, 50vw" className="object-cover" />
+              </div>
+            ))}
+          </div>
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-widest text-accent">Tecnología</p>
+            <h2 className="mt-3 font-display text-3xl font-bold sm:text-4xl">
+              El ejercicio hace el trabajo. La tecnología lo acompaña.
+            </h2>
+            <p className="mt-4 text-white/70">
+              Usamos estos equipos solo cuando tu evaluación lo indica, como complemento del ejercicio terapéutico.
+            </p>
+            <ul className="mt-8 space-y-4">
+              {tecnologias.map((t) => (
+                <li key={t.nombre} className="flex gap-3">
+                  <Zap size={20} className="mt-0.5 shrink-0 text-accent" />
+                  <div>
+                    <h3 className="font-display font-bold">{t.nombre}</h3>
+                    <p className="text-sm leading-relaxed text-white/65">{t.texto}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>

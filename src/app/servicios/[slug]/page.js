@@ -4,7 +4,8 @@ import { notFound } from "next/navigation";
 import { CheckCircle2, Phone } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
 import ServiceCard from "@/components/ServiceCard";
-import { contacto, equipo, pasos, servicios, whatsappLink } from "@/data/site";
+import ContactActions from "@/components/ContactActions";
+import { contacto, equipo, pasos, servicios } from "@/data/site";
 
 export function generateStaticParams() {
   return servicios.map((s) => ({ slug: s.slug }));
@@ -54,14 +55,12 @@ export default async function ServicioPage({ params }) {
               </li>
             ))}
           </ul>
-          <a
-            href={whatsappLink(`Hola, me interesa el servicio de ${servicio.titulo}.`)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-6 block rounded-full bg-accent py-3 text-center font-semibold"
-          >
-            Escribir por WhatsApp
-          </a>
+          <ContactActions
+            mensaje={`Hola, me interesa el servicio de ${servicio.titulo}.`}
+            dark
+            compact
+            className="mt-6 !grid w-full"
+          />
         </aside>
       </section>
 

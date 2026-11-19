@@ -3,9 +3,9 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { ChevronDown, Menu, MessageCircle, Phone, X } from "lucide-react";
 import Logo from "./Logo";
-import { navLinks, servicios, whatsappLink } from "@/data/site";
+import { navLinks, servicios, telLink, whatsappLink } from "@/data/site";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -52,14 +52,22 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <a
-          href={whatsappLink()}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hidden rounded-full bg-cepro px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-cepro-dark md:inline-block"
-        >
-          Agendar cita
-        </a>
+        <div className="hidden items-center gap-2 md:flex">
+          <a
+            href={telLink()}
+            className="inline-flex items-center gap-1.5 rounded-full bg-cepro px-4 py-2.5 text-sm font-semibold text-white transition hover:brightness-110"
+          >
+            <Phone size={16} /> Llamar
+          </a>
+          <a
+            href={whatsappLink()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 rounded-full bg-accent px-4 py-2.5 text-sm font-semibold text-white transition hover:brightness-110"
+          >
+            <MessageCircle size={16} /> WhatsApp
+          </a>
+        </div>
 
         <button
           onClick={() => setOpen(!open)}
@@ -85,14 +93,20 @@ export default function Navbar() {
               </Link>
             </li>
           ))}
-          <li className="pt-2">
+          <li className="grid grid-cols-2 gap-3 pt-2">
+            <a
+              href={telLink()}
+              className="flex items-center justify-center gap-2 rounded-full bg-cepro px-5 py-3 font-semibold text-white"
+            >
+              <Phone size={18} /> Llamar
+            </a>
             <a
               href={whatsappLink()}
               target="_blank"
               rel="noopener noreferrer"
-              className="block rounded-full bg-cepro px-5 py-3 text-center font-semibold text-white"
+              className="flex items-center justify-center gap-2 rounded-full bg-accent px-5 py-3 font-semibold text-white"
             >
-              Agendar cita
+              <MessageCircle size={18} /> WhatsApp
             </a>
           </li>
         </ul>

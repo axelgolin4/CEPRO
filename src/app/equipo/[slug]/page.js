@@ -2,7 +2,8 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Briefcase, GraduationCap, UserRound } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
-import { equipo, whatsappLink } from "@/data/site";
+import ContactActions from "@/components/ContactActions";
+import { equipo } from "@/data/site";
 
 export function generateStaticParams() {
   return equipo.map((p) => ({ slug: p.slug }));
@@ -77,14 +78,10 @@ export default async function PerfilPage({ params }) {
             <p className="mt-3 leading-relaxed text-white/85">{persona.objetivo}</p>
           </blockquote>
 
-          <a
-            href={whatsappLink(`Hola, quiero agendar una cita con ${primerNombre}.`)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block rounded-full bg-cepro px-7 py-3.5 font-semibold text-white transition hover:bg-cepro-dark"
-          >
-            Agendar cita con {primerNombre}
-          </a>
+          <div>
+            <p className="font-display font-bold text-ink">Agendar cita con {primerNombre}</p>
+            <ContactActions mensaje={`Hola, quiero agendar una cita con ${primerNombre}.`} className="mt-3" />
+          </div>
         </div>
       </section>
     </>

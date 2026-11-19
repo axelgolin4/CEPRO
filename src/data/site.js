@@ -17,6 +17,8 @@ export const contacto = {
   mapsEmbed: "https://www.google.com/maps?q=14.8409719,-91.5278376&z=17&output=embed",
 };
 
+export const telLink = (telefono = contacto.telefonos[0]) => `tel:+502${telefono.replace(/\D/g, "")}`;
+
 export const whatsappLink = (mensaje = "Hola, quiero agendar una evaluación en CEPRO.") =>
   `https://wa.me/${contacto.whatsapp}?text=${encodeURIComponent(mensaje)}`;
 
